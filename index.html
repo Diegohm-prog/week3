@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <title>Web Development 2022</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial;
+      text-align: center;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: auto auto auto auto auto auto;
+      padding: 2%;
+    }
+
+    img {
+      object-fit: cover;
+      width: 100%;
+    }
+
+    img:hover {
+      opacity: 0.5;
+    }
+
+    .daytime {
+
+      background: red;
+    }
+
+    .nightMode {
+
+      background: black;
+    }
+
+    #changing {
+      color: red;
+    }
+
+    .header {
+      color: red;
+    }
+
+
+
+    @media screen and (max-width: 800px) {
+      .grid-container {
+        grid-template-columns: auto auto auto;
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      .grid-container {
+        grid-template-columns: auto;
+      }
+
+    }
+  </style>
+
+</head>
+
+<body id="cosa">
+  <header class="header">Web Development 2022</header>
+  <h1 id="changing">Web Development 2022</h1>
+  <div class="grid-container">
+
+
+    <div class="grid-item"><img src="https://placedog.net/200/300?1"></div>
+    <div class="grid-item"><img src="https://placedog.net/200/300?random"></div>
+    <div class="grid-item"><img src="https://placedog.net/200/300/g"></div>
+    <div class="grid-item"><img src="https://placedog.net/200/300?r"></div>
+    <div class="grid-item"><img src="https://placedog.net/200/300/pixelate"></div>
+    <div class="grid-item"><img src="https://placedog.net/200/300/b"></div>
+    <div class="grid-item"><img src="https://placedog.net/200/300/invert"></div>
+    <div class="grid-item"><img src="https://placedog.net/200/300/s"></div>
+    <div class="grid-item"><img src="https://placedog.net/200/300/bn"></div>
+    <div class="grid-item"><img src="https://placedog.net/200/300/contrast"></div>
+    <div class="grid-item"><img src="https://placedog.net/200/300/sepia?id=5"></div>
+    <div class="grid-item"><img src="https://placedog.net/200/300?r"></div>
+
+
+
+  </div>
+
+  <footer>
+    <p>© 2022 DIEGO HERMIDA</p>
+  </footer>
+
+  <script>
+
+
+    const d = new Date();
+    // let day = 0;
+    let day = d.getDay();
+    console.log(day);
+
+    if (day == 1) {
+      document.getElementById('changing').textContent = "It's Monday";
+    } else if (day == 5) {
+      document.getElementById('changing').textContent = "Happy Friday";
+    } else if (day == 2) {
+      document.getElementById('changing').textContent = "It's Thusday";
+    } else if (day == 3) {
+      document.getElementById('changing').textContent = "It's Wensday";
+    } else if (day == 4) {
+      document.getElementById('changing').textContent = "It's Thurday";
+    } else if (day == 6) {
+      document.getElementById('changing').textContent = "It's Saturday";
+    } else { document.getElementById('changing').textContent = "It's SUNDAY"; }
+
+
+    let hour = new Date().getHours();
+    console.log(hour);
+
+    let background = document.querySelector('body');
+    if (hour >= 18 || hour < 6) {
+      background.style.backgroundColor = 'black';
+
+
+    } else {
+      background.style.backgroundColor = 'yellow';
+    }
+
+
+    let text = document.getElementsByClassName('header');
+    if (hour >= 18 || hour < 6) {
+      text.style.color = "red";
+
+
+    } else {
+      text.style.color = "red";
+    }
+
+
+  </script>
+</body>
+
+</html>
+
+</html>
